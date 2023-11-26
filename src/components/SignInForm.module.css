@@ -1,0 +1,129 @@
+.signin {
+	display: flex;
+	flex-direction: column;
+	width: 65%;
+	margin: 0 auto;
+}
+.signin > div:first-child {
+	margin-top: 24px;
+	font-size: 18px;
+	text-align: center;
+}
+
+.signin label {
+	width: 100%;
+	margin: 0 auto;
+	margin-top: 8px;
+	font-size: 14px;
+}
+
+.signin input {
+	margin: 0 auto;
+	margin-top: 8px;
+	fill: none;
+	background-color: transparent;
+	height: 42px;
+	width: 100%;
+	outline: none;
+	border: 2px solid #eee;
+	border-radius: 2px;
+	padding: 0 10px;
+	color: #ddd;
+	font-size: 24px;
+	letter-spacing: 0.5px;
+}
+
+.signin__btn {
+	height: 42px;
+	margin-top: 16px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	background-color: transparent;
+	color: #333;
+	background-color: #0ca678;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	letter-spacing: 1.5px;
+	cursor: pointer;
+}
+
+.forgot {
+	margin-top: 12px;
+	font-size: 12px;
+	text-align: center;
+}
+.forgot:link,
+.forgot:visited {
+	color: #fff;
+}
+.forgot:hover {
+	color: #ddd;
+}
+.forgot:active {
+	color: #0ca678;
+}
+
+.or {
+	text-align: center;
+	margin-top: 12px;
+	font-size: 16px;
+	position: relative;
+}
+
+.or::before,
+.or::after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 45%;
+	height: 2px;
+	background-color: #0ca678;
+}
+
+.or::after {
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+.or::before {
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+.options {
+	margin-top: 12px;
+	text-align: center;
+	font-size: 14px;
+}
+.socialmedia__links {
+	margin-top: 12px;
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
+}
+.socialmedia__links button {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border: 1px solid #ddd;
+	padding: 8px 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.socialmedia__links button svg {
+	fill: #ddd;
+	width: 18px;
+	margin-right: 12px;
+}
+.socialmedia__links div {
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 1.5px;
+}

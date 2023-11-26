@@ -1,0 +1,111 @@
+.pricing {
+	background-color: #444;
+	min-height: 100vh;
+	color: #eee;
+}
+.plan {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 2.2rem;
+	width: 200px;
+	margin: 0 auto;
+	margin-top: 48px;
+	border: 2px solid #fff;
+	border-radius: 50px;
+	padding: 10px 24px;
+	color: #eee;
+	font-size: 18px;
+	font-weight: 500;
+	cursor: pointer;
+}
+.plan div {
+	z-index: 5;
+}
+.plan::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: #0ca678;
+	width: 50%;
+	height: 100%;
+	border-radius: 50px;
+	transition: all 0.2s ease-out;
+}
+.plan:active::after {
+	transform: translateX(100%);
+}
+.pricing .cards {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 48px;
+
+	/* background-color: red; */
+}
+
+.saving {
+	text-align: center;
+	margin-top: 24px;
+}
+
+.pricing .cards > li {
+	width: 300px;
+	padding: 15px;
+
+	/* border: 3px solid #eee; */
+	background-color: #555;
+	border-radius: 5px;
+}
+
+.pricing .cards > li:nth-child(2) {
+	background-color: #20c997;
+}
+
+.pricing .cards li h2 {
+	margin: 25px 0;
+}
+
+.pricing .cards li h1 {
+	margin: 25px 0;
+}
+
+.pricing .cards li button {
+	display: block;
+	padding: 12px 32px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	background-color: #0ca678;
+	color: #fff;
+	font-size: 18px;
+	margin: 0 auto;
+	margin-bottom: 48px;
+	cursor: pointer;
+}
+
+.pricing .cards li ul {
+	list-style: none;
+}
+
+.center {
+	text-align: center;
+}
+
+.cards ul li {
+	display: flex;
+	margin-bottom: 16px;
+}
+
+.cards ul li span {
+	color: #0ca678;
+	font-size: 1.5rem;
+	margin-right: 12px;
+}
+.cards ul li:first-child {
+	margin-top: 16px;
+}

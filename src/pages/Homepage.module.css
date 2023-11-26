@@ -1,0 +1,76 @@
+body {
+	background-color: #242424;
+}
+.homepage header {
+	height: 100vh;
+	background-image: linear-gradient(
+			rgba(36, 42, 46, 0.8),
+			rgba(36, 42, 46, 0.8)
+		),
+		url("/bg.jpg");
+	background-size: cover;
+	background-position: center;
+	color: #f1f1f1;
+}
+
+.header__container__inner {
+	width: 50%;
+}
+.homepage h1 {
+	margin-top: 96px;
+	margin-bottom: 48px;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 52px;
+	letter-spacing: 3px;
+}
+.homepage header .container p {
+	font-size: 20px;
+	line-height: 1.7rem;
+	margin-bottom: 48px;
+}
+
+.homepage .container a:link,
+.homepage .container a:visited {
+	padding: 16px 32px;
+	text-decoration: none;
+	border-radius: 5px;
+	border: none;
+	background-color: #0ca678;
+	font-size: 24px;
+	font-weight: 600;
+	color: #f1f1f1;
+	cursor: pointer;
+	letter-spacing: 2px;
+}
+.container {
+	margin: 0 auto;
+	width: 90vw;
+}
+
+.homepage section {
+	margin-top: 48px;
+}
+.homepage section h2 {
+	color: #444;
+	font-size: 44px;
+	margin-bottom: 48px;
+}
+
+.homepage section p {
+	color: #444;
+	line-height: 1.7rem;
+	font-weight: 500;
+	margin-bottom: 48px;
+}
+
+.homepage footer p {
+	margin-top: 48px;
+	margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 800px) {
+	.header__container__inner {
+		width: 90%;
+	}
+}

@@ -1,0 +1,31 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	width: 90vw;
+	margin: 0 auto;
+	padding-top: 15px;
+	height: 8vh;
+}
+
+.navbar ul {
+	list-style: none;
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.navbar ul li a:link,
+.navbar ul li a:visited {
+	text-decoration: none;
+	color: #f1f1f1;
+}
+
+.navbar ul li:last-child a:link,
+.navbar ul li:last-child a:visited {
+	padding: 8px 24px;
+	background-color: #0ca678;
+	border-radius: 5px;
+	color: #f1f1f1;
+}
