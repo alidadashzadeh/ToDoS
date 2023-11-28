@@ -1,0 +1,80 @@
+.sidebar {
+  height: 76vh;
+  background-color: #444;
+  color: #f1f1f1;
+}
+
+.category__container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-grow: 1;
+  height: 28px;
+}
+.category {
+  border: none;
+  border-radius: 5px;
+  appearance: none;
+  padding: 0 30px 0 15px;
+  width: 100%;
+  color: #fff;
+  background-color: #bbb;
+  font-size: 20px;
+}
+
+.category__container .icon__container {
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.icon__container svg {
+  fill: #f1f1f1;
+  width: 24px;
+}
+
+.sidebar .list {
+  width: 100%;
+  margin: 24px 0;
+}
+
+.sidebar .list label {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.sidebar .list .list__item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 5px 15px;
+}
+
+.sidebar .list .list__item a:link,
+.sidebar .list .list__item a:visited {
+  text-decoration: none;
+  width: 100%;
+  color: #f1f1f1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar .list .list__item a:active {
+  color: #333;
+}
+.sidebar .list .list__item:hover {
+  background-color: #555;
+}
+.sidebar .list .list__item span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}

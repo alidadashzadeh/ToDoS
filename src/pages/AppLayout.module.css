@@ -1,0 +1,27 @@
+.application {
+  min-height: 100vh;
+  position: relative;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+.fixed__top {
+  position: fixed;
+  width: 100%;
+  height: 26vh;
+  background-color: #444;
+  z-index: 100;
+}
+.application .sidebar__container {
+  position: fixed;
+  top: 28vh;
+  left: 0;
+  width: 20vw;
+}
+
+.application .todo__list__container {
+  width: 80vw;
+  position: absolute;
+  top: 28vh;
+  right: 0;
+}

@@ -1,0 +1,55 @@
+.login {
+	min-height: 100vh;
+	color: #f1f1f1;
+	background-color: #444;
+}
+
+.login .container {
+	width: 35%;
+	margin: 0 auto;
+	margin-top: 48px;
+	background-color: #444;
+	letter-spacing: 1px;
+	/* background-color: orange; */
+}
+
+.signin__links {
+	display: flex;
+	justify-content: space-around;
+	position: relative;
+}
+
+.signin__links :global(.active)::after {
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: #0ca678;
+	width: 50%;
+	height: 3px;
+	bottom: 0;
+}
+
+.signin__links a:link,
+.signin__links a:visited {
+	flex-grow: 1;
+	padding: 15px 0;
+	letter-spacing: 1px;
+	text-align: center;
+	color: #f1f1f1;
+	text-decoration: none;
+}
+
+.signin__links a:hover {
+	color: #b7b7b7;
+}
+.signin__links a:active {
+	color: #eee;
+}
+
+.signin__links .active {
+	font-weight: 500;
+	letter-spacing: 2px;
+	font-size: 14px;
+	color: #fff;
+	border: 2px solid #0ca678;
+}
