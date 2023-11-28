@@ -1,5 +1,7 @@
 import styles from "./TodoForm.module.css";
 
+import moment from "moment";
+
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -10,12 +12,13 @@ function TodoForm() {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [priority, setPriority] = useState(false);
-	// const [duedate, setDuedate] = useState(new Date(Date.now() + 84600000));
 	const [duedate, setDuedate] = useState("");
 	const [category, setCategory] = useState("personal");
 
 	const { addTodo, todos, editingID, terminateUpdateTodo, updateTodo } =
 		useTodos();
+
+	// console.log(moment(duedate));
 
 	useEffect(
 		function () {
@@ -85,17 +88,14 @@ function TodoForm() {
 				/>
 
 				<DatePicker
-					showIcon
 					selected={duedate}
 					onChange={(date) => {
-						if (date - Date.now() < 0) {
-							setDuedate(new Date());
-							return;
-						}
-						setDuedate(date);
+						// console.log(moment(new Date()).endOf("day"));
+						setDuedate(moment(date).endOf("day")._d);
+						// setDuedate(moment(date)._i);
 					}}
+					minDate={new Date()}
 					className={styles.todo__datepicker}
-					dateFormat="dd/MM/yyyy"
 				/>
 				<div className={styles.category__container}>
 					<select

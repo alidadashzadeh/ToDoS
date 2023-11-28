@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useTodos } from "../contexts/TodosContext";
 import { dueDate } from "../utils/Helper";
+import moment from "moment";
 
 import styles from "./TodoItem.module.css";
 
@@ -23,7 +24,7 @@ function TodoItem({ todo }) {
 			<label htmlFor={todo.id} className={styles.todo__content}>
 				<p className={styles.todo__title}>{todo.title}</p>
 				{todo.duedate && (
-					<p className={styles.due__date}>{dueDate(todo.duedate)}</p>
+					<p className={styles.due__date}>{moment(todo.duedate).calendar()}</p>
 				)}
 			</label>
 			{todo.priority && (
