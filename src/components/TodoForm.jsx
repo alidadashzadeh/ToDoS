@@ -2,7 +2,7 @@ import styles from "./TodoForm.module.css";
 
 import moment from "moment";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -12,13 +12,22 @@ function TodoForm() {
 	const [title, setTitle] = useState("");
 	const [description, setDescription] = useState("");
 	const [priority, setPriority] = useState(false);
-	const [duedate, setDuedate] = useState("");
+	const [duedate, setDuedate] = useState(null);
 	const [category, setCategory] = useState("personal");
 
 	const { addTodo, todos, editingID, terminateUpdateTodo, updateTodo } =
 		useTodos();
 
-	// console.log(moment(duedate));
+	const textAreaRef = useRef(null);
+
+	useEffect(
+		function () {
+			textAreaRef.current.style.height = "auto";
+			textAreaRef.current.style.height =
+				textAreaRef.current.scrollHeight + "px";
+		},
+		[description]
+	);
 
 	useEffect(
 		function () {
@@ -38,7 +47,7 @@ function TodoForm() {
 		setTitle("");
 		setPriority(false);
 		// setDuedate(new Date(Date.now() + 84600000));
-		setDuedate("");
+		setDuedate(null);
 		setCategory("personal");
 	}
 	function handleSubmit(e) {
@@ -90,13 +99,20 @@ function TodoForm() {
 				<DatePicker
 					selected={duedate}
 					onChange={(date) => {
-						// console.log(moment(new Date()).endOf("day"));
+						if (date === null) {
+							setDuedate("");
+							return;
+						}
 						setDuedate(moment(date).endOf("day")._d);
-						// setDuedate(moment(date)._i);
 					}}
 					minDate={new Date()}
+					shouldCloseOnSelect={false}
+					placeholderText=" select Due Date"
 					className={styles.todo__datepicker}
+					isClearable
+					todayButton="TODAY"
 				/>
+
 				<div className={styles.category__container}>
 					<select
 						id="category"
@@ -132,18 +148,15 @@ function TodoForm() {
 					className={styles.submit__btn}
 					onClick={editingID ? handleUpdateTodo : handleSubmit}
 				>
-					{editingID ? "Update todo" : "ADD ToDo"}
+					{editingID ? "Update" : "ADD ToDo"}
 				</button>
 			</div>
 			<textarea
 				value={description}
 				className={styles.todo__description}
-				id="description"
-				// required
 				placeholder="Description"
-				rows="4"
-				cols="50"
 				onChange={(e) => setDescription(e.target.value)}
+				ref={textAreaRef}
 			/>
 		</form>
 	);

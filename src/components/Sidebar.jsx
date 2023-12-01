@@ -1,6 +1,6 @@
 import styles from "./Sidebar.module.css";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { useTodos } from "../contexts/TodosContext";
 function Sidebar() {
@@ -36,59 +36,59 @@ function Sidebar() {
 			</div>
 			<ul className={styles.list}>
 				<li className={styles.list__item}>
-					<Link to="inbox">
+					<NavLink to="inbox">
 						<span>
 							<span class="material-symbols-outlined">inbox</span>
 							Inbox
 						</span>
 						<span>{todos.length}</span>
-					</Link>
+					</NavLink>
 				</li>
 				<li className={styles.list__item}>
-					<Link to="today">
+					<NavLink to="today">
 						<span>
 							<span class="material-symbols-outlined">calendar_today</span>
 							Today
 						</span>
 						<span>{todayTodos.length}</span>
-					</Link>
+					</NavLink>
 				</li>
 				<li className={styles.list__item}>
-					<Link to="upcoming">
+					<NavLink to="upcoming">
 						<span>
 							<span class="material-symbols-outlined">calendar_month</span>
 							Upcoming
 						</span>
 						<span>{upcomingTodos.length}</span>
-					</Link>
+					</NavLink>
 				</li>
 			</ul>
 			<ul className={styles.list}>
 				<label>Categories</label>
 				<li className={styles.list__item}>
-					<Link to="personal">
+					<NavLink to="personal">
 						<span>
 							<span class="material-symbols-outlined">person</span>Personal
 						</span>
 						<span>{personalTodos.length}</span>
-					</Link>
+					</NavLink>
 				</li>
 				<li className={styles.list__item}>
-					<Link to="business">
+					<NavLink to="business">
 						<span>
 							<span class="material-symbols-outlined">work</span>Business
 						</span>
 						<span>{businessTodos.length}</span>
-					</Link>
+					</NavLink>
 				</li>
 				<li className={styles.list__item}>
-					<Link to="family">
+					<NavLink to="family">
 						<span>
 							<span class="material-symbols-outlined">family_restroom</span>
 							Family
 						</span>
 						<span>{familyTodos.length}</span>
-					</Link>
+					</NavLink>
 				</li>
 			</ul>
 		</div>

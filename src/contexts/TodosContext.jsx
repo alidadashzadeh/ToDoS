@@ -16,6 +16,7 @@ function TodosProvider({ children }) {
 	const [familyTodos, setFamilyTodos] = useState([]);
 	const [filterType, setFilterType] = useState("uncompleted");
 	const [filteredTodos, setFilteredTodos] = useState([]);
+	const [sort, setSort] = useState(true);
 
 	useEffect(
 		function () {
@@ -140,6 +141,8 @@ function TodosProvider({ children }) {
 				filterType,
 				setFilterType,
 				filteredTodos,
+				sort,
+				setSort,
 			}}
 		>
 			{children}

@@ -7,7 +7,7 @@
 	position: relative;
 	margin: 0 auto;
 	height: 65px;
-	width: 50%;
+	width: 65%;
 }
 
 .completed {
@@ -99,7 +99,6 @@
 	justify-content: center;
 }
 
-/* priority checkbox */
 .todo__item .priority label {
 	cursor: pointer;
 	position: relative;
@@ -120,21 +119,33 @@
 	display: flex;
 	gap: 5px;
 }
+
+.todo__item:hover > .buttons button {
+	display: block;
+}
 .todo__item .buttons button {
-	padding: 4px 16px;
-	background-color: #0ca678;
-	border: none;
+	display: none;
+	padding: 4px 8px;
+	border: 2px solid #f1f1f1;
 	outline: none;
 	border-radius: 3px;
 	cursor: pointer;
-	color: #f1f1f1;
-	font-size: 16px;
+	background-color: transparent;
+	fill: #555;
+}
+.todo__item .buttons button:first-child {
+	border-color: #f16b62;
 }
 
-.todo__item .buttons button:hover {
-	background-color: #57c9a7;
+.todo__item .buttons button:first-child:hover {
+	background-color: #f16b62;
+	fill: #f1f1f1;
 }
 
-.todo__item .buttons button:active {
+.todo__item .buttons button:last-child {
+	border-color: #0ca678;
+}
+.todo__item .buttons button:last-child:hover {
 	background-color: #0ca678;
+	fill: #f1f1f1;
 }
