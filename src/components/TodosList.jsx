@@ -4,7 +4,7 @@ import styles from "./TodosList.module.css";
 
 function TodosList({ todos }) {
 	return (
-		<ul className={styles.todos__list}>
+		<ul>
 			{todos?.length === 0 ? (
 				<div className={styles.message}>nothing to show</div>
 			) : (

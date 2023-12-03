@@ -1,0 +1,8 @@
+.inbox {
+	width: 80vw;
+	transition: all 0.3s ease-out;
+}
+
+.inbox.expandList {
+	transform: translateX(-10vw);
+}

@@ -1,0 +1,40 @@
+.add__todo__popup {
+	width: 50%;
+	height: 20%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid #444;
+	z-index: 100;
+	border-radius: 10px;
+}
+.add__todo__popup .title {
+	width: 100%;
+	margin-top: 5px;
+	padding: 5px 10px;
+	font-size: 22px;
+	border: none;
+	outline: none;
+	color: #f1f1f1;
+	background-color: red;
+
+	&::placeholder {
+		color: #666;
+	}
+}
+
+.add__todo__popup .details {
+	width: 100%;
+	margin-top: 5px;
+	padding: 5px 10px;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: #f1f1f1;
+	background-color: red;
+
+	&::placeholder {
+		color: #666;
+	}
+}

@@ -1,27 +1,18 @@
+import styles from "./Inbox.module.css";
 import { useTodos } from "../contexts/TodosContext";
-import { useEffect, useState } from "react";
-import { ascending, descending } from "../utils/Helper";
+import Header from "./Header";
 
 import TodosList from "./TodosList";
-import ListHeader from "./ListHeader";
 
 function Inbox() {
-	const { filteredTodos, sort } = useTodos();
-
-	const [sortfiltered, setSortFiltered] = useState();
-
-	useEffect(
-		function () {
-			if (sort) setSortFiltered(ascending(filteredTodos.slice()));
-			if (!sort) setSortFiltered(descending(filteredTodos.slice()));
-		},
-		[sort, filteredTodos]
-	);
+	const { todos, toggleSidebar } = useTodos();
 
 	return (
-		<div>
-			<ListHeader title={"Inbox"} />
-			<TodosList todos={sortfiltered} />;
+		<div
+			className={`${styles.inbox} ${toggleSidebar ? styles.expandList : ""}`}
+		>
+			<Header />
+			<TodosList todos={todos} />;
 		</div>
 	);
 }
