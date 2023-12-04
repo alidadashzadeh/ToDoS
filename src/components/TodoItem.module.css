@@ -22,13 +22,14 @@
 .todo__checkmark {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	width: 25px;
 	height: 25px;
 	border: 1px solid #333;
 	position: relative;
 	border-radius: 50px;
 	transition: all 0.2s ease-in;
+	background-color: #0ca678;
 
 	&:hover {
 		background-color: #444;
@@ -68,12 +69,15 @@
 }
 
 .todo__content .todo__title {
-	font-size: 18px;
+	font-size: 14px;
+	line-height: 21px;
 	margin: 2px 5px;
 }
 
-.todo__content .description {
-	font-size: 14px;
+.todo__content .details {
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: 300;
 	margin: 2px 5px;
 }
 

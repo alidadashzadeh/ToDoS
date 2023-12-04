@@ -26,10 +26,8 @@ function TodoItem({ todo }) {
 
 			<div className={styles.todo__content}>
 				<div className={styles.todo__title}>{todo.title}</div>
-				{todo.description && (
-					<div className={styles.description}>{todo.description}</div>
-				)}
-				{todo.duedate && (
+				{todo.detail && <div className={styles.details}>{todo.detail}</div>}
+				{todo.dueDate && (
 					<div className={styles.due__date}>
 						{moment(todo.duedate).calendar()}
 					</div>
