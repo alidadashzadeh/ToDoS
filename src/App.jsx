@@ -7,11 +7,6 @@ import Login from "./pages/Login";
 import Pagenotfound from "./pages/Pagenotfound";
 import SignInForm from "./components/SignInForm";
 import Inbox from "./components/Inbox";
-import Today from "./components/Today";
-import Upcoming from "./components/Upcoming";
-import PersonalCategory from "./components/PersonalCategory";
-import BusinessCategory from "./components/BusinessCategory";
-import FamilyCategory from "./components/FamilyCategory";
 import SignUpForm from "./components/SignUpForm";
 import AppLayout from "./pages/AppLayout";
 import { TodosProvider } from "./contexts/TodosContext";
@@ -25,11 +20,8 @@ function App() {
 					<Route path="/app" element={<AppLayout />}>
 						<Route index element={<Navigate replace to="inbox" />} />
 						<Route path="inbox" element={<Inbox />} />
-						<Route path="today" element={<Today />} />
-						<Route path="upcoming" element={<Upcoming />} />
-						<Route path="personal" element={<PersonalCategory />} />
-						<Route path="business" element={<BusinessCategory />} />
-						<Route path="family" element={<FamilyCategory />} />
+						<Route path="today" element={<Inbox />} />
+						<Route path="upcoming" element={<Inbox />} />
 					</Route>
 					<Route path="/pricing" element={<Pricing />} />
 					<Route path="/contact" element={<Contact />} />

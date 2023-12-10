@@ -39,3 +39,16 @@ export function dueDate(duedate) {
 		tododate.getDate()
 	)}`;
 }
+
+export function ascending(todos) {
+	return todos.sort((a, b) => {
+		if (a.duedate > b.duedate) return 1;
+		if (a.duedate < b.duedate) return -1;
+	});
+}
+export function descending(todos) {
+	return todos.sort((a, b) => {
+		if (a.duedate > b.duedate) return -1;
+		if (a.duedate < b.duedate) return 1;
+	});
+}

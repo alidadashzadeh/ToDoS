@@ -1,21 +1,20 @@
 import styles from "./aPPlAYOUT.module.css";
 
-import TodoForm from "../components/TodoForm";
-import AppNav from "../components/AppNav";
 import Sidebar from "../components/Sidebar";
 import { Outlet } from "react-router-dom";
+import BlurBackground from "../components/BlurBackground";
+import { useTodos } from "../contexts/TodosContext";
+import AddTodoPopup from "../components/AddTodoPopup";
 
 function AppLayout() {
+	const { addTodoPopup, accountPopup } = useTodos();
 	return (
-		<div className={styles.application}>
-			<div className={styles.fixed__top}>
-				<AppNav />
-				<TodoForm />
-			</div>
-			<div className={styles.content}>
-				<Sidebar />
-				<Outlet />
-			</div>
+		<div className={styles.app}>
+			{accountPopup && <BlurBackground />}
+			{addTodoPopup && <BlurBackground />}
+			{addTodoPopup && <AddTodoPopup />}
+			<Sidebar />
+			<Outlet />
 		</div>
 	);
 }

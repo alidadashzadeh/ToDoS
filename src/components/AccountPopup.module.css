@@ -1,0 +1,117 @@
+.account__popup {
+	position: absolute;
+	width: 250px;
+	border-radius: 10px;
+	top: 50px;
+	left: 25px;
+	background-color: #282828;
+	z-index: 100;
+	font-size: 14px;
+}
+
+.account__container {
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #444;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.account__container .account__content {
+	width: 95%;
+	height: 80%;
+	border-radius: 5px;
+	cursor: pointer;
+	text-align: center;
+	padding-top: 8px;
+	&:hover {
+		background-color: #444;
+	}
+}
+
+.features {
+	width: 100%;
+	border-bottom: 1px solid #444;
+}
+.features__list {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.features__list .settings,
+.features__list .AI__tool {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 2px 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 1px;
+
+	&:hover {
+		background-color: #444;
+	}
+}
+
+.features__list .settings svg,
+.features__list .AI__tool svg {
+	fill: #f1f1f1;
+	height: 24px;
+}
+
+.upgrade__container,
+.sync__container,
+.logout__container {
+	width: 100%;
+	border-bottom: 1px solid #444;
+}
+
+.upgrade__container .upgrade,
+.sync__container .sync,
+.logout__container .logout {
+	width: 90%;
+
+	margin: 0 auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	padding: 2px 5px;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 1px;
+
+	&:hover {
+		background-color: #444;
+	}
+}
+
+.upgrade__container .upgrade svg,
+.sync__container .sync svg,
+.logout__container .logout svg {
+	fill: #f1f1f1;
+	height: 24px;
+}
+
+.footer {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: center;
+	margin: 5px 0;
+}
+
+.footer div {
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 5px;
+	&:hover {
+		background-color: #444;
+	}
+}

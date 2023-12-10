@@ -9,70 +9,10 @@ function TodosProvider({ children }) {
 		return storedTodos ? JSON.parse(storedTodos) : [];
 	});
 	const [editingID, setEditingID] = useState("");
-	const [todayTodos, setTodayTodos] = useState([]);
-	const [upcomingTodos, setUpcomingTodos] = useState([]);
-	const [personalTodos, setPersonalTodos] = useState([]);
-	const [businessTodos, setBusinessTodos] = useState([]);
-	const [familyTodos, setFamilyTodos] = useState([]);
-	const [filterType, setFilterType] = useState("uncompleted");
-	const [filteredTodos, setFilteredTodos] = useState([]);
+	const [toggleSidebar, setToggleSidebar] = useState(false);
+	const [accountPopup, setAccountPopup] = useState(false);
+	const [addTodoPopup, setAddTodoPopup] = useState(false);
 
-	useEffect(
-		function () {
-			if (filterType === "all") setFilteredTodos(todos);
-			if (filterType === "completed")
-				setFilteredTodos(todos.filter((todo) => todo.completed));
-			if (filterType === "uncompleted")
-				setFilteredTodos(todos.filter((todo) => !todo.completed));
-		},
-		[filterType, todos]
-	);
-	useEffect(
-		function () {
-			setTodayTodos(
-				filteredTodos.filter(
-					(todo) =>
-						new Date(todo.duedate) - new Date() < 86400000 &&
-						new Date(todo.duedate) - new Date() > 0
-				)
-			);
-		},
-		[filteredTodos]
-	);
-	useEffect(
-		function () {
-			setUpcomingTodos(
-				filteredTodos.filter(
-					(todo) => new Date(todo.duedate) - new Date() > 86400000
-				)
-			);
-		},
-		[filteredTodos]
-	);
-	useEffect(
-		function () {
-			setPersonalTodos(
-				filteredTodos.filter((todo) => todo.category === "personal")
-			);
-		},
-		[filteredTodos]
-	);
-	useEffect(
-		function () {
-			setBusinessTodos(
-				filteredTodos.filter((todo) => todo.category === "business")
-			);
-		},
-		[filteredTodos]
-	);
-	useEffect(
-		function () {
-			setFamilyTodos(
-				filteredTodos.filter((todo) => todo.category === "family")
-			);
-		},
-		[filteredTodos]
-	);
 	useEffect(
 		function () {
 			localStorage.setItem("todos", JSON.stringify(todos));
@@ -121,6 +61,18 @@ function TodosProvider({ children }) {
 		);
 	}
 
+	function handleClosePopup() {
+		setAccountPopup(false);
+		setAddTodoPopup(false);
+	}
+
+	function handleAccountPopup() {
+		setAccountPopup(true);
+	}
+	function handleAddTodoPopup() {
+		setAddTodoPopup(true);
+	}
+
 	return (
 		<todosContext.Provider
 			value={{
@@ -132,14 +84,13 @@ function TodosProvider({ children }) {
 				terminateUpdateTodo,
 				updateTodo,
 				completedTodo,
-				todayTodos,
-				upcomingTodos,
-				personalTodos,
-				businessTodos,
-				familyTodos,
-				filterType,
-				setFilterType,
-				filteredTodos,
+				accountPopup,
+				handleAccountPopup,
+				handleClosePopup,
+				toggleSidebar,
+				setToggleSidebar,
+				addTodoPopup,
+				handleAddTodoPopup,
 			}}
 		>
 			{children}
